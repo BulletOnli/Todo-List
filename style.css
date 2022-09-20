@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@900&family=Open+Sans:wght@400;500;600;700;800&family=Shrikhand&family=Silkscreen&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9dcc4;
+}
+
+
+main {
+    width: 25rem;
+    height: auto;
+    background-color: #fec89a;
+    border: 3px solid black;
+    border-radius: 20px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header h1 {
+    padding-top: 10px;
+    font-weight: bolder;
+}
+
+.header input {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bolder;
+    width: 22rem;
+    margin-top: 10px;
+    padding: 5px 0;
+    border-radius: 10px;
+    border: 2px solid black;
+    outline: none;
+    background-color: #f8edeb;
+}
+
+#submitBtn {
+    font-size: 20px;
+    font-weight: bold;
+    width: 12rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px;
+    margin-top: 5px;
+    background-color: #ffb5a7;
+}
+
+#submitBtn:hover {
+    background-color: #fcd5ce;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    margin-top: 1.5rem;
+    position: relative;
+}
+
+#titleContainer {
+    font-size: 1.5rem;
+    width: 20rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 5px 20px;
+}
+
+small a,
+small i {
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px;
+    padding: 0 3px;
+}
+
+@media (max-width: 400px) {
+    main {
+        width: 18rem;
+    }
+    .header input {
+        width: 15rem;
+    }
+    #titleContainer {
+        width: 14rem;
+    }
+}
