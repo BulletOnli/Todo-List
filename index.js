@@ -1,5 +1,12 @@
 let todos = []
 
+let myTodos = JSON.parse(localStorage.getItem('myTodos'))
+
+if (myTodos) {
+    todos = myTodos
+    showTodo()
+}
+
 function addTodo() {
     const inputTodo = document.getElementById('inputTodo');
     const title = inputTodo.value;
@@ -10,24 +17,31 @@ function addTodo() {
         id: id
     })
 
-    inputTodo.value = '';
-    console.log(todos)
+    inputTodo.value = ''
+    localStorage.setItem("myTodos", JSON.stringify(todos))
     showTodo()
-    
+    console.log(todos)
 }
 
 function removeTodo(event) {
     const deleteBtn = event.target
     const deleteTodo = deleteBtn.id
 
-    todos = todos.filter(todo => todo.id !== deleteTodo)
+    todos = todos.filter(todo => {
+        if (todo.id === deleteTodo) { 
+            localStorage.removeItem("myTodos")
+            return false        
+        } else {
+            return true
+        }
+    })
+    localStorage.setItem("myTodos", JSON.stringify(todos))
     showTodo()
     console.log(todos)
 }
 
 function showTodo() {
     document.getElementById("todoContainer").textContent = '';
-    // document.getElementById("deleteBtnContainer").textContent = '';
 
     todos.forEach(function(todo) {
         const titleContainer = document.createElement('p');
