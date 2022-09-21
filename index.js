@@ -9,16 +9,18 @@ function addTodo() {
         name: title,
         id: id
     })
+
     inputTodo.value = '';
     console.log(todos)
     showTodo()
+    
 }
 
 function removeTodo(event) {
     const deleteBtn = event.target
-    const idToDelete = deleteBtn.id
+    const deleteTodo = deleteBtn.id
 
-    todos = todos.filter(todo => todo.id !== idToDelete)
+    todos = todos.filter(todo => todo.id !== deleteTodo)
     showTodo()
     console.log(todos)
 }
@@ -33,7 +35,7 @@ function showTodo() {
         titleContainer.textContent = "● " + todo.name;
 
         const deleteBtn = document.createElement('button');
-        deleteBtn.textContent = "Delete"
+        deleteBtn.textContent = "Done"
         deleteBtn.style.padding = "5px 10px"
         deleteBtn.style.borderRadius = "5px"
         deleteBtn.style.border = "1px solid black"
